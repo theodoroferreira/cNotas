@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Notas</title>
+    <style>
+        h1 {
+            border-left: 8px solid red;
+            border: 2x solid lightgrey;
+            border-radius: 12px;
+            padding: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h3 {
+            border-left: 8px solid blue;
+            border: 2x solid lightgrey;
+            border-radius: 12px;
+            padding: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+        }
+
+        p.a {
+            background-color: lightgrey;
+            width: 725px;
+            border: 2x solid lightgrey;
+            border-radius: 12px;
+            padding: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10x;
+        }
+
+        p.b {
+            background-color: lightgrey;
+            width: 725px;
+            border: 2x solid lightgrey;
+            border-radius: 12px;
+            padding: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10x;
+        }
+
+        input[type=number] {
+            width: 75px;
+            padding: 2px 15px;
+            margin: 2px 2px;
+            border: 2px solid black;
+            border-radius: 12px;
+        }
+
+        .btnCalcular {
+            display: inline-block;
+            padding: 2px 15px;
+            font-size: 13.4px;
+            cursor: pointer;
+            text-decoration: none;
+            outline: none;
+            color: black;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 12px;
+        }
+
+        .btnCalcular:hover {
+            background-color: lightgrey;
+        }
+
+        .button:active {
+            background-color: black;
+            box-shadow: 0 100px grey;
+            transform: translateY(100px);
+        }
+
+        .containerGeral {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .containerGeral>div:nth-child(odd)>p {
+            border-left: 8px solid red;
+            border-radius: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+        }
+
+        .containerGeral>div:nth-child(even)>p {
+            border-left: 8px solid blue;
+            border-radius: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calcule quanto você precisa tirar na prova do 3º trimestre!</h1>
+
+    <h3>Atenção! Use esse padrão para o cálculo de notas: soma das notas do 1º trimestre + soma das notas do 2º
+        trimestre + soma das notas do 3º trimestre (sem a nota do provão).</h3>
+
+    <div class="containerGeral">
+        <div>
+            <p class="a">Matemática: <br />
+                1º trimestre: <input type="number" id="inNotaMat1"> 2º trimestre: <input type="number" id="inNotaMat2">
+                3º
+                trimestre: <input type="number" id="inNotaMat3"> <button type="button" class="btnCalcular"
+                    value="Calcular" id="btMat" name="Mat"> Calcular </button>
+            <p id="outMat"></p>
+            </p>
+        </div>
+
+        <div>
+            <p class="b">Biologia: <br />
+                1º trimestre: <input type="number" id="inNotaBio1"> 2º trimestre: <input type="number" id="inNotaBio2">
+                3º
+                trimestre: <input type="number" id="inNotaBio3"> <button type="button" class="btnCalcular"
+                    value="Calcular" id="btBio" name="Bio"> Calcular </button>
+            <p id="outBio"></p>
+            </p>
+        </div>
+
+        <div>
+            <p class="a">Física: <br />
+                1º trimestre: <input type="number" id="inNotaFis1"> 2º trimestre: <input type="number" id="inNotaFis2">
+                3º
+                trimestre: <input type="number" id="inNotaFis3"> <button type="button" class="btnCalcular"
+                    value="Calcular" id="btFis" name="Fis"> Calcular </button>
+            <p id="outFis"></p>
+            </p>
+        </div>
+
+        <div>
+            <p class="b">Química: <br />
+                1º trimestre: <input type="number" id="inNotaQuim1"> 2º trimestre: <input type="number"
+                    id="inNotaQuim2"> 3º
+                trimestre: <input type="number" id="inNotaQuim3"> <button type="button" class="btnCalcular"
+                    value="Calcular" id="btQuim" name="Quim"> Calcular </button>
+            <p id="outQuim"></p>
+            </p>
+        </div>
+
+        <div>
+            <p class="a">Educação Física: <br />
+                1º trimestre: <input type="number" id="inNotaEdf1"> 2º trimestre: <input type="number" id="inNotaEdf2">
+                3º
+                trimestre: <input type="number" id="inNotaEdf3"> <button type="button" class="btnCalcular"
+                    value="Calcular" id="btEdf" name="Edf"> Calcular </button>
+            <p id="outEdf"></p>
+            </p>
+        </div>
+
+        <div>
+            <p class="b">Espanhol: <br />
+                1º trimestre: <input type="number" id="inNotaEsp1"> 2º trimestre: <input type="number" id="inNotaEsp2">
+                3º
+                trimestre: <input type="number" id="inNotaEsp3"> <button type="button" class="btnCalcular"
+                    value="Calcular" id="btEsp" name="Esp"> Calcular </button>
+            <p id="outEsp"></p>
+            </p>
+        </div>
+
+        <div>
+            <p class="a">Inglês: <br />
+                1º trimestre: <input type="number" id="inNotaIng1"> 2º trimestre: <input type="number" id="inNotaIng2">
+                3º
+                trimestre: <input type="number" id="inNotaIng3"> <button type="button" class="btnCalcular"
+                    value="Calcular" id="btIng" name="Ing"> Calcular </button>
+            <p id="outIng"></p>
+            </p>
+        </div>
+
+        <div>
+            <p class="b">Português: <br />
+                1º trimestre: <input type="number" id="inNotaPort1"> 2º trimestre: <input type="number"
+                    id="inNotaPort2"> 3º
+                trimestre: <input type="number" id="inNotaPort3"> <button type="button" class="btnCalcular"
+                    value="Calcular" id="btPort" name="Port"> Calcular </button>
+            <p id="outPort"></p>
+            </p>
+        </div>
+
+        <div>
+            <p class="a">Literatura: <br />
+                1º trimestre: <input type="number" id="inNotaLit1"> 2º trimestre: <input type="number" id="inNotaLit2">
+                3º
+                trimestre: <input type="number" id="inNotaLit3"> <button type="button" class="btnCalcular"
+                    value="Calcular" id="btLit" name="Lit"> Calcular </button>
+            <p id="outLit"></p>
+            </p>
+        </div>
+
+        <div>
+            <p class="b">Redação: <br />
+                1º trimestre: <input type="number" id="inNotaRed1"> 2º trimestre: <input type="number" id="inNotaRed2">
+                3º
+                trimestre: <input type="number" id="inNotaRed3"> <button type="button" class="btnCalcular"
+                    value="Calcular" id="btRed" name="Red"> Calcular </button>
+            <p id="outRed"></p>
+            </p>
+        </div>
+
+        <div>
+            <p class="a">Filosofia: <br />
+                1º trimestre: <input type="number" id="inNotaFil1"> 2º trimestre: <input type="number" id="inNotaFil2">
+                3º
+                trimestre: <input type="number" id="inNotaFil3"> <button type="button" class="btnCalcular"
+                    value="Calcular" id="btFil" name="Fil"> Calcular </button>
+            <p id="outFil"></p>
+            </p>
+        </div>
+
+        <div>
+            <p class="b">Sociologia: <br />
+                1º trimestre: <input type="number" id="inNotaSoc1"> 2º trimestre: <input type="number" id="inNotaSoc2">
+                3º
+                trimestre: <input type="number" id="inNotaSoc3"> <button type="button" class="btnCalcular"
+                    value="Calcular" id="btSoc" name="Soc"> Calcular </button>
+            <p id="outSoc"></p>
+            </p>
+        </div>
+
+        <div>
+            <p class="a">História: <br />
+                1º trimestre: <input type="number" id="inNotaHis1"> 2º trimestre: <input type="number" id="inNotaHis2">
+                3º
+                trimestre: <input type="number" id="inNotaHis3"> <button type="button" class="btnCalcular"
+                    value="Calcular" id="btHis" name="His"> Calcular </button>
+            <p id="outHis"></p>
+            </p>
+        </div>
+
+        <div>
+            <p class="b">Geografia: <br />
+                1º trimestre: <input type="number" id="inNotaGeo1"> 2º trimestre: <input type="number" id="inNotaGeo2">
+                3º
+                trimestre: <input type="number" id="inNotaGeo3"> <button type="button" class="btnCalcular"
+                    value="Calcular" id="btGeo" name="Geo"> Calcular </button>
+            <p id="outGeo"></p>
+            </p>
+        </div>
+
+        <div>
+            <p class="a">Artes: <br />
+                1º trimestre: <input type="number" id="inNotaArt1"> 2º trimestre: <input type="number" id="inNotaArt2">
+                3º
+                trimestre: <input type="number" id="inNotaArt3"> <button type="button" class="btnCalcular"
+                    value="Calcular" id="btArt" name="Art"> Calcular </button>
+            <p id="outArt"></p>
+            </p>
+        </div>
+
+    </div>
+    <script src="cNotasjs/cNotas.js"></script>
+</body>
+
+</html>
